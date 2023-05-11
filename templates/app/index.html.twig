@@ -1,12 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AppController!{% endblock %}
+{% block title %}Hello AppController!
+{% endblock %}
 
 {% block body %}
-<div>
-<h1>This is {{ controller_name }}. App will be here </h1>
-<a href="{{path('app_main')}}"> Go back to Main</a>
-<a href="{{path('app_help')}}"> Go to HELP</a>
+	<div class="wrapper">
 
-</div>
+		<header>
+			<div class="logo">
+				<a href="{{path('app_main')}}">Undefined</a>
+			</div>
+			<nav>
+				<ul>
+					<a href="{{path('app_main')}}">Home</a>
+					<a href="{{path('app_app')}}">Todo</a>
+					<a href="{{path('app_help')}}">About us</a>
+
+				</ul>
+			</nav>
+		</header>
+		<main></main>
+		<footer>
+			<small>
+				© React23K Undefined team</small>
+		</footer>
+
+	</div>
 {% endblock %}
