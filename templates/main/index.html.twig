@@ -1,13 +1,83 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}MainController{% endblock %}
+{% block title %}Main
+{% endblock %}
 
 {% block body %}
+	<head>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	</head>
+	<div class="wrapper">
 
-<div>
-    <h1>This is {{ controller_name }}</h1>
-    <a href="{{path('app_app')}}"> Go to App</a>
-    <a href="{{path('app_help')}}"> Go to help page</a>
+		<header>
+			<div class="logo">
+				<a href="{{path('app_main')}}">Undefined</a>
+			</div>
+			<nav>
+				<ul>
+					<a href="{{path('app_main')}}">Home</a>
+					<a href="{{path('app_app')}}">Todo</a>
+					<a href="{{path('app_help')}}">About us</a>
 
-</div>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<h1>Discover the World of Todo</h1>
+			<div class="insideMain">
+				<div class="block">
+					<h3>Welcome to TodoZone, your ultimate destination for creating new tasks and adrenaline-pumping ToDo's.</h3>
+
+					<p>TodoZone is your one-stop platform for managing your tasks and embarking on thrilling adventures. With our user-friendly interface and robust features, you can effortlessly create, organize, and prioritize your tasks to stay on top of your goals.</p>
+					<br/>
+					<p>Ready to embark on your productivity journey? Join TodoZone today and unlock a world of possibilities. Let's conquer tasks, embrace adventures, and make every day a step closer to your goals!</p>
+					<br/>
+					<p>Whether you're an experienced adventurer seeking new challenges or a beginner looking to explore the world of task management, TodoZone has something for everyone. Our platform empowers you to unleash your productivity, conquer your to-do lists, and make progress towards your dreams.</p>
+
+				</div>
+
+
+				<div class="block">
+					<div class="gallery-container">
+						<div class="gallery">
+							<img src="./images/dish.jpeg" alt="Man washing dish">
+							<img src="./images/vacuum.jpeg" alt="Man with vacuumcleaner">
+							<img src="./images/dust.jpeg" alt="Man cleaning dust">
+							<img src="./images/work.png" alt="Man workin with pc">
+						</div>
+						<div class="scroll-arrows">
+							<div class="arrow-left">&lt;</div>
+							<div class="arrow-right">&gt;</div>
+						</div>
+					</div>
+					<form action="{{path('app_app')}}">
+						<input id="buttonLink" type="submit" value="Create Todo"/>
+					</form>
+				</div>
+
+			</div>
+
+		</main>
+		<footer>
+			<small>
+				© React23K Undefined team</small>
+		</footer>
+
+	</div>
+
+	<script>
+		$(document).ready(function () {
+$(".arrow-left").click(function () {
+$(".gallery").animate({
+"margin-left": "+=580px"
+}, "slow");
+});
+
+$(".arrow-right").click(function () {
+$(".gallery").animate({
+"margin-left": "-=580px"
+}, "slow");
+});
+});
+	</script>
 {% endblock %}

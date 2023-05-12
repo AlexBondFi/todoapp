@@ -1,13 +1,55 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}HelpController{% endblock %}
+{% block title %}HelpController
+{% endblock %}
 
 {% block body %}
+	<div class="wrapper">
 
-<div>
-    <h1>This is {{ controller_name }}</h1>
-    <a href="{{path('app_app')}}"> Go to App</a>
-    <a href="{{path('app_main')}}"> Go to another page</a>
+		<header>
+			<div class="logo">
+				<a href="{{path('app_main')}}">Undefined</a>
+			</div>
+			<nav>
+				<ul>
+					<a href="{{path('app_main')}}">Home</a>
+					<a href="{{path('app_app')}}">Todo</a>
+					<a href="{{path('app_help')}}">About us</a>
 
-</div>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<div class="team-container">
+				<div class="team-member">
+					<img src="./images/Alex.jpeg" alt="Alex">
+					<h2>Alex</h2>
+					<p>Master of Tasks</p>
+					<p>Alex is the brain behind the TodoApp. With his organizational skills and love for efficiency, he ensures that you can conquer your tasks with ease.</p>
+				</div>
+
+				<div class="team-member">
+					<img src="./images/Maria.jpeg" alt="Maria">
+					<h2>Maria</h2>
+					<p>Tech Guru</p>
+					<p>Maria is the tech wizard who makes sure that the TodoApp runs smoothly. With her coding skills and passion for innovation, she keeps everything up and running.</p>
+				</div>
+
+				<div class="team-member">
+					<img src="./images/Anton.jpeg" alt="Anton">
+					<h2>Anton</h2>
+					<p>Adventure Enthusiast</p>
+					<p>Anton brings a sense of fun and excitement to the team. He believes that managing tasks should be an exciting adventure, and he's here to make it happen!</p>
+				</div>
+			</div>
+			<div class="aboutUs">
+				<h3>Meet our dynamic team at TodoApp! We are a group of three passionate individuals from Russia, united by our love for organization and productivity. Alex, our master of tasks, ensures that you stay on top of your to-do list. Olga, the adventure enthusiast, infuses excitement into your task management experience. Dmitry, our tech guru, ensures the seamless functioning of our app. Together, we are dedicated to providing you with a delightful and efficient task management solution. Join us on this thrilling journey towards productivity and success!</h3>
+			</div>
+		</main>
+		<footer>
+			<small>
+				© React23K Undefined team</small>
+		</footer>
+
+	</div>
 {% endblock %}
