@@ -5,7 +5,6 @@
 
 {% block body %}
 	<div class="wrapper">
-
 		<header>
 			<div class="logo">
 				<a href="{{path('app_main')}}">Undefined</a>
@@ -19,7 +18,29 @@
 				</ul>
 			</nav>
 		</header>
-		<main></main>
+		<main>
+			<div class="header">
+				<h2>CRUD App</h2>
+				<form action="{{path('create_task')}}" method="post">
+					<input name="title" type="text" id="myInput" placeholder="Task title..."/>
+					<button type="submit" class="addBtn">Add a task</button>
+				</form>
+			</div>
+
+			<ul>
+				{% for task in tasks %}
+					<li {% if task.status %} class="checked" {% endif %}>
+						<a href="{{path('update_task', {'id': task.id})}}">
+							<span class="task-list-item">{{task.title}}
+							</span>
+						</a>
+						<a onclick="return confirm('Are you sure to delete?')" href="{{path('delete_task', {'id': task.id})}}">
+							<span class="close">X</span>
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</main>
 		<footer>
 			<small>
 				© React23K Undefined team</small>
